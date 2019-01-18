@@ -10,8 +10,6 @@ import UIKit
 
 class UINibView: UIView {
 
-	private var view: UIView!
-
 	// MARK: - Inits
 
 	override init(frame: CGRect) {
@@ -38,7 +36,6 @@ class UINibView: UIView {
 		view.frame = bounds
 		view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-		self.view = view
 		self.addSubview(view)
 	}
 

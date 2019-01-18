@@ -8,19 +8,19 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class ExampleView: UIView {
 
 	// MARK: - designable
 
-	@IBInspectable
+//	@IBInspectable
 	var logoImage: UIImage? = nil {
 		didSet {
 			logoImageView.image = logoImage
 		}
 	}
 
-	@IBInspectable
+//	@IBInspectable
 	var title: String = "" {
 		didSet {
 			titleLabel.text = title
@@ -29,18 +29,16 @@ class ExampleView: UIView {
 
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
-	
-	private var view: UIView!
 
 	// MARK: - Inits
 
-	override init(frame: CGRect) {
+	override init(frame: CGRect) {	// For using ExampleView in code
 		super.init(frame: frame)
 
 		self.loadFromNib()
 	}
 
-	required init?(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {  // For using ExampleView in storyboard
 		super.init(coder: aDecoder)
 
 		self.loadFromNib()
@@ -58,7 +56,6 @@ class ExampleView: UIView {
 		view.frame = bounds
 		view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-		self.view = view
 		self.addSubview(view)
 	}
 }
